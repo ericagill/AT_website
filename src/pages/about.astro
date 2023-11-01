@@ -1,0 +1,89 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Profile_pic from "../Images/About_picture.jpg"
+---
+
+<Layout>
+<Navbar />
+
+<section class="personal-bio">
+    <img src = {Profile_pic.src} alt="profile picture" width="400px" height = "600px">
+    <article>
+        <div>
+        <h2>ABOUT AT INTERIOR DESIGN</h2>
+        <p>Hello and welcome to Alessia Trevisan design
+            briefly describe:
+            your style 
+            your design concept 
+            anything more about your design style</p>
+        </div>
+        <div>
+        <h2>ABOUT ALESSIA TREVISAN</h2>
+        <p>briefly describe:
+            who you are 
+            your experience 
+            your uniqueness and lifestyle </p>
+        </div>
+    </article>
+</section>
+<section class = "services">
+    <article>
+        <h2>Alessia Trevisan Interior Design can advise on</h2>
+        <p> Furniture and home decor selection and placement <br>
+            Floor plan layout <br>
+            Styling (surfaces, sofas, beds, walls etc.) <br>
+            Paint/wall treatments and drapery/window treatments <br>
+            Cabinetry and built-ins <br>
+            Fixtures, finishes and trims <br>
+            Construction and remodel ideas <br>
+            Exterior design <br>
+        </p>
+    </article>
+</section>
+
+
+<style>
+    .personal-bio {
+        display: flex;
+        flex-direction: row;
+        justify-content: baseline;
+
+    }
+    .personal-bio img{
+        width: 30%;
+        padding: 20px;
+        margin: 20px;
+
+    }
+
+    .personal-bio article {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        width: 50%;
+        padding: 20px;
+        margin: 20px;
+
+    }
+
+    article div {
+        width: 100%;
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .services {
+        background-color: #efddcf;
+        text-align: center;
+    }
+
+    .services article {
+        padding: 40px;
+        
+    }
+
+
+</style>
+</Layout>

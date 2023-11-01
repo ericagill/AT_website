@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import {Image}  from "astro:assets";
 import Project_sample1 from "../Images/Project_sample1.png"
 import Project_sample2 from "../Images/Project_sample2.png"
 
@@ -9,20 +8,20 @@ import Project_sample2 from "../Images/Project_sample2.png"
 <Layout>
     <header>
         <nav class = "topnav">
-            <p>Alessia <br> 
-            Trevisan <br>
+            <p>AT <br> 
             Interior <br>
             Design <br>
             </p>
             <ul>
-                <li><a href="#projects">Projects</a></li>
-                <div class="dropdown-content">
-                    <a href="#">Residential Projects</a>
-                    <a href="#">Hospitality Projects</a>
-                </div>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#About">About</a></li>
-                <li><a href="#Contact">Contact</a></li>
+                <li class = "dropdown">
+                    <a href="#">Projects</a>
+                    <div class="dropdown-content">
+                        <a href="./resProjects">Residential Projects</a>
+                        <a href="./hosProjects">Hospitality Projects</a>
+                    </div>
+                </li>
+                <li><a href="./about">About</a></li>
+                <li><a href="./contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -30,19 +29,19 @@ import Project_sample2 from "../Images/Project_sample2.png"
         <section class="description">
             <article>
                 <div class="bio">
-                    <p>This is a brief description of the service and products you offer. <br> The type of design that makes you unique. <br> The experience that led you to here...<a href="#About">LEARN MORE</a></p>      
+                    <p>This is a brief description of the service and products you offer. <br> The type of design that makes you unique. <br> The experience that led you to here...<a href="./about">LEARN MORE</a></p>      
                 </div>
             </article>
         </section>
         <section>
             <div class="projects" >
                 <div class = "project-section">
-                    <img src= {Project_sample1.src} width="500px" height="300px" alt ="hospitality project preview viking cruise ship">
+                    <a href ="./hosProjects"><img src= {Project_sample1.src} width="500px" height="300px" alt ="hospitality project preview viking cruise ship"></a>
                     <p>Hospitality projects</p>
                 </div>
     
                 <div class = "project-section">
-                    <img src={Project_sample2.src} width="500px" height="300px" alt ="residential project preview london home hall" >
+                    <a href ="./resProjects"><img src={Project_sample2.src} width="500px" height="300px" alt ="residential project preview london home hall" ></a>
                     <p>Residential projects</p>
                 </div>
     
@@ -50,7 +49,8 @@ import Project_sample2 from "../Images/Project_sample2.png"
         </section>       
     </main>
     <style>
-        header {
+        
+    header {
         /* The image used */
         background-image: url("../Images/Opening_project1.png");
     
@@ -82,23 +82,7 @@ import Project_sample2 from "../Images/Project_sample2.png"
         margin-left: 0;
         margin-right: auto;
     }
-    
-    
-    .dropdown-content {
-        display: none;
-        z-index: 1;
-    }
-    
-    .dropdown-content a {
-        float: none;
-        color: black;
-        padding: 12px 16px;
-        display: block;
-        text-align: left;
-      }
-    
-    /* Show the dropdown menu on hover */
-    
+
     .topnav ul {
         display: flex;
         flex-direction: row;
@@ -118,7 +102,31 @@ import Project_sample2 from "../Images/Project_sample2.png"
         color: black;
         text-decoration: underline;
     }
-/* main description  section */
+
+    
+    /* Dropdown element */
+    
+    .dropdown-content {
+        display: none; 
+        position: absolute;
+        top: 40px;
+        z-index: 1;
+    }
+    
+    .dropdown-content a {
+        color: black;
+        text-align: left;
+        height: 40px;
+
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+
+
+    /* main description  section */
 
     .description {
     margin: 10%;
@@ -159,7 +167,7 @@ import Project_sample2 from "../Images/Project_sample2.png"
     margin: 5px;
 
     font-size: 1.5rem;
-    color: var(--color-primary);
+    color: #333
 
 }
 
