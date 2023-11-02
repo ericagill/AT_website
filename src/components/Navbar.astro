@@ -1,20 +1,39 @@
 <header>
     <nav class = "topnav">
-        <p><a href="/AT_website/">AT Interior Design</a></p>
-        <ul>
+        <p class ="brand-name" ><a href="/AT_website/">AT Interior Design</a></p>
+
+        <a href = "#" class = "toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+
+        <ul class = "navbar-links">
             <li><a href="/AT_website">Home</a></li>
-            <li class = "dropdown">
+            <li><a href="/AT_website/resProjects">Residential</a></li>
+            <li><a href="/AT_website/hosProjects">Hospitality</a></li>
+            <!-- <li class = "dropdown">
                 <a href="#">Projects</a>
                 <div class="dropdown-content">
                     <a href="/AT_website/resProjects">Residential Projects</a>
                     <a href="/AT_website/hosProjects">Hospitality Projects</a>
                 </div>
-            </li>
+            </li> -->
             <li><a href="/AT_website/about">About</a></li>
             <li><a href="/AT_website/contact">Contact</a></li>
         </ul>
     </nav>
 </header>
+<script>
+    const toggleButton = document.getElementsByClassName("toggle-button")[0];
+
+    const navbarLinks = document.getElementsByClassName("navbar-links")[0];
+
+    toggleButton.addEventListener("click", () => {
+        console.log(navbarLinks)
+    navbarLinks.classList.toggle("active")
+    })
+</script>
 <style>
 
 header {
@@ -30,17 +49,18 @@ header {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    flex-wrap: wrap;
 
 }
 
-.topnav p {
+.brand-name {
     color: #333;
     font-size: 3rem;
 }
 
-.topnav ul {
+.navbar-links {
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     justify-content: flex-end;
 }
 
@@ -63,9 +83,30 @@ header {
     text-decoration: underline;
 }
 
+/* hamburger menu style */
+
+.toggle-button {
+        position:absolute;
+        top: .7rem;
+        right: 1rem;
+
+        display:none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+    }
+
+    .toggle-button .bar {
+        height: 3px;
+        width:100%;
+        background-color: #333;
+        border-radius: 10px;
+    }
+
 /* dropdown menu on projects */
 
-.dropdown-content {
+/* .dropdown-content {
         display: none; 
         position: relative;
         z-index: 1;
@@ -81,6 +122,28 @@ header {
 
 .dropdown:hover .dropdown-content {
         display: block;
+    } */
+
+
+/* media queries */
+    
+    @media (max-width: 565px) {
+        .toggle-button {
+            display: flex;
+        }
+
+        .navbar-links {
+            display: none; 
+        }
+        
+        .navbar-links {
+            flex-direction: column;
+        }
+
+        /* to be shown on click event when active class is added */
+        .navbar-links.active{
+            display: flex;
+        }
     }
 
 

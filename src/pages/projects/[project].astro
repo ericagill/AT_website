@@ -1,0 +1,76 @@
+---
+//layout imports
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+
+
+
+export async function getStaticPaths () {
+    
+    return [
+        {
+            params:{ project : "private-residence-london" },
+            props:
+            { 
+                title : "Private Residence London",
+                description:"Entire refurbishment for the existing building from the early twenties to the moder area. New extension family room, new garden and pool design.",
+            },
+
+        },
+        {
+            params:{ project : "notting-hill-maisonette" },
+            props:
+            { 
+                title : "Notting Hill Maisonette",
+                description: "" ,
+            },
+
+        },
+        {
+            params:{ project : "lambeth-victorian-house" },
+            props:
+            { 
+                title : "Lambeth Victorian House",
+                description:"Entire refurbishment for the existing building from the early twenties to the moder area. New extension family room, new garden and pool design.",
+            },
+            
+
+        },
+        {
+            params:{ project : "clerkenwell-penthouse" },
+            props:
+            { 
+                title : "Clerkenwell Penthouse",
+                description:"Entire refurbishment for the existing building from the early twenties to the moder area. New extension family room, new garden and pool design.",
+            },
+
+        },
+        {
+            params:{ project : "south-kensington-apartment" },
+            props:
+            { 
+                title : "South Kensington apartment",
+                description:"Entire refurbishment for the existing building from the early twenties to the moder area. New extension family room, new garden and pool design.",
+            },
+
+        },
+
+    ];
+}
+
+const { project } = Astro.params;
+const { title } = Astro.props;
+const {description } = Astro.props; 
+---
+
+<Layout>
+    <Navbar />
+
+    <section>
+        <h2 class = "title">{title}</h2>
+        <p class = "description"> {description} </p>
+    </section>
+<style>
+
+</style>
+</Layout>

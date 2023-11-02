@@ -12,39 +12,38 @@ import Mandarin from "../Images/hospitality_projects/Mandarin-hotel-Lucerne_proj
     <Navbar />
     <section class="project-type">
         <p >Hospitality Projects</p>
-        <hr>
-    </section>
 
-    <section class = "residential-projects">
-        <div class = "rows">
-            <div class="container">
-                <img src= {Viking.src} alt="Viking Cruise Ship hospitality project preview" class="image" width = "600px" height ="400px">
-                <div class="overlay">
-                    <div class = "text">Viking Cruise Ship</div>
+        <section class = "hospitality-projects">
+            <div class = "rows">
+                <div class="container">
+                    <img src= {Viking.src} alt="Viking Cruise Ship hospitality project preview" class="image" width = "500px" height ="400px">
+                    <div class="overlay">
+                        <div class = "text">Viking Cruise Ship</div>
+                    </div>
+                </div>
+                <div class="container">
+                    <img src= {Mandarin.src} alt="Mandarin hotel Lucerne hospitality project preview" class="image" width = "500px" height ="400px">
+                    <div class="overlay">
+                        <div class = "text">Mandarin hotel Lucerne</div>
+                    </div>
                 </div>
             </div>
-            <div class="container">
-                <img src= {Mandarin.src} alt="Mandarin hotel Lucerne hospitality project preview" class="image" width = "600px" height ="400px">
-                <div class="overlay">
-                    <div class = "text">Mandarin hotel Lucerne</div>
+            <div class = "rows">
+                <div class="container">
+                    <img src={Buxted.src} alt="Buxted park hotel hospitality project preview" class="image" width = "500px" height ="400px">
+                    <div class="overlay">
+                        <div class = "text">Buxted park hotel</div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class = "rows">
-            <div class="container">
-                <img src={Buxted.src} alt="Buxted park hotel hospitality project preview" class="image" width = "600px" height ="400px">
-                <div class="overlay">
-                    <div class = "text">Buxted park hotel</div>
-                </div>
-            </div>
 
-            <div class="container">
-                <img src= {POCruise.src} alt="P&O cruise ship hospitality project preview" class="image" width = "600px" height ="400px">
-                <div class="overlay">
-                    <div class = "text">P&O cruise ship</div>
+                <div class="container">
+                    <img src= {POCruise.src} alt="P&O cruise ship hospitality project preview" class="image" width = "500px" height ="400px">
+                    <div class="overlay">
+                        <div class = "text">P&O cruise ship</div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     </section>
     <style>
         .project-type p {
@@ -55,10 +54,11 @@ import Mandarin from "../Images/hospitality_projects/Mandarin-hotel-Lucerne_proj
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
 
         }
 
-        .residential-projects {
+        .hospitality-projects {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -70,7 +70,6 @@ import Mandarin from "../Images/hospitality_projects/Mandarin-hotel-Lucerne_proj
             display: flex;
             flex-direction: row;
             justify-content: center;
-            align-items: baseline;
 
         }
 
@@ -81,7 +80,10 @@ import Mandarin from "../Images/hospitality_projects/Mandarin-hotel-Lucerne_proj
         }
 
         .image {
-            padding: 20px
+            padding: 20px;
+            max-width: 100%;
+            height:auto;
+            overflow: hidden;
         }
 
         /* The overlay effect - lays on top of the container and over the image */
@@ -109,6 +111,13 @@ import Mandarin from "../Images/hospitality_projects/Mandarin-hotel-Lucerne_proj
         /* When you mouse over the container, fade in the overlay title */
         .container:hover .overlay {
             opacity: 1;
+        }
+
+        /* Media queries */
+            @media only screen and (max-width: 975px) {
+                .rows {
+                    flex-direction: column;
+                }
         }
 
     </style>

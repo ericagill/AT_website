@@ -8,16 +8,22 @@ import Project_sample2 from "../Images/Project_sample2.png"
 <Layout>
     <header>
         <nav class = "topnav">
-            <p>AT <br> 
+            <p class ="brand-name">AT <br> 
             Interior <br>
             Design <br>
             </p>
-            <ul>
+            <a href = "#" class = "toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <ul class = "navbar-links">
                 <li class = "dropdown">
                     <a href="#">Projects</a>
                     <div class="dropdown-content">
-                        <a href="/AT_website/resProjects">Residential Projects</a>
-                        <a href="/AT_website/hosProjects">Hospitality Projects</a>
+                        <a href="/AT_website/resProjects">Residential</a>
+                        <br>
+                        <a href="/AT_website/hosProjects">Hospitality</a>
                     </div>
                 </li>
                 <li><a href="/AT_website/about">About</a></li>
@@ -44,10 +50,19 @@ import Project_sample2 from "../Images/Project_sample2.png"
                     <a href ="/AT_website/resProjects"><img src={Project_sample2.src} width="500px" height="300px" alt ="residential project preview london home hall" ></a>
                     <p>Residential projects</p>
                 </div>
-    
             </div>
         </section>       
     </main>
+    <script>
+        const toggleButton = document.getElementsByClassName("toggle-button")[0];
+
+        const navbarLinks = document.getElementsByClassName("navbar-links")[0];
+
+        toggleButton.addEventListener("click", () => {
+            //console.log(navbarLinks)
+        navbarLinks.classList.toggle("active")
+        })
+    </script>
     <style>
         
     header {
@@ -74,7 +89,7 @@ import Project_sample2 from "../Images/Project_sample2.png"
     
     }
     
-    .topnav p {
+    .brand-name {
         color: #f2f2f2;
         font-size: 3rem;
     
@@ -83,19 +98,18 @@ import Project_sample2 from "../Images/Project_sample2.png"
         margin-right: auto;
     }
 
-    .topnav ul {
+    .navbar-links {
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
     }
     
     .topnav li a {
-        float: left;
-        color: #f2f2f2;
-        text-align: center;
-        padding: 14px 16px;
         text-decoration: none;
+        color: #f2f2f2;
         font-size: 1.5rem;
+        padding: 14px 16px;
+
     }
       
     .topnav li a:hover {
@@ -103,8 +117,29 @@ import Project_sample2 from "../Images/Project_sample2.png"
         text-decoration: underline;
     }
 
+/* hamburger menu style */
+
+    .toggle-button {
+        position:absolute;
+        top: .7rem;
+        right: 1rem;
+
+        display:none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+    }
+
+    .toggle-button .bar {
+        height: 3px;
+        width:100%;
+        background-color: #f2f2f2;
+        border-radius: 10px;
+    }
+
     
-    /* Dropdown element */
+/* Dropdown element */
     
     .dropdown-content {
         display: none; 
@@ -125,51 +160,82 @@ import Project_sample2 from "../Images/Project_sample2.png"
     }
 
 
-
-    /* main description  section */
+/* main description  section */
 
     .description {
-    margin: 10%;
+        margin: 10%;
 
-    font-size: 1rem;
+        font-size: 1.5rem;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 
     .bio p {
-    text-align: center;
-}
+        text-align: center;
+    }
 
     .bio p a:hover{
-    text-decoration: underline;
-}
+        text-decoration: underline;
+    }
+
 /* main projects section  */
 
     .projects{
-    margin-bottom: 10%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
+        margin-bottom: 10%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
 
     .project-section {
-    padding: 10px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
 
     .project-section p {
-    margin: 5px;
+        margin: 5px;
 
-    font-size: 1.5rem;
-    color: #333
+        font-size: 1.5rem;
+        color: #333
 
-}
+    }
+
+/* main projects media queries */
+    
+    @media (max-width: 1050px) {
+        .projects {
+            display: flex;
+            flex-direction: column;
+        }
+        
+    }
+
+/* navbar media queries */
+    
+    @media (max-width: 565px) {
+        .toggle-button {
+            display: flex;
+        }
+
+        .navbar-links {
+            display: none; 
+        }
+        
+        .navbar-links {
+            flex-direction: column;
+        }
+
+        /* to be shown on click event when active class is added */
+        .navbar-links.active{
+            display: flex;
+        }
+    }
 
     </style>
 </Layout>
