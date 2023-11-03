@@ -8,28 +8,34 @@ import Profile_pic from "../Images/About_picture.jpg"
 <Navbar />
 
 <section class="personal-bio">
-    <img src = {Profile_pic.src} alt="profile picture" width="400px" height = "600px">
-    <article>
-        <div>
-        <h2>ABOUT AT INTERIOR DESIGN</h2>
-        <p>Hello and welcome to Alessia Trevisan design
-            briefly describe:
-            your style 
-            your design concept 
-            anything more about your design style</p>
-        </div>
-        <div>
+    <div class="about-design">
+        <h2 >ABOUT AT INTERIOR DESIGN</h2>
+        <p>Hello and welcome to Alessia Trevisan design<br>
+            briefly describe: <br>
+            your style <br>
+            your design concept <br>
+            anything more about your design style
+        </p>
+    </div>
+    <div class="title-at">
         <h2>ABOUT ALESSIA TREVISAN</h2>
-        <p>briefly describe:
-            who you are 
-            your experience 
-            your uniqueness and lifestyle </p>
+    </div>
+    
+    <div class = "about-at">
+        <div class = "profile-picture">
+            <img src = {Profile_pic.src} alt="profile picture" width="400px" height = "400px">
         </div>
-    </article>
+        <div class ="profile-description">
+            <p>briefly describe: <br>
+                who you are <br>
+                your experience <br>
+                your uniqueness and lifestyle </p>
+        </div>
+    </div>
+    
 </section>
 <section class = "services">
-    <article>
-        <h2>Alessia Trevisan Interior Design can advise on</h2>
+        <h2>AT Interior Design can advise on</h2>
         <p> Furniture and home decor selection and placement <br>
             Floor plan layout <br>
             Styling (surfaces, sofas, beds, walls etc.) <br>
@@ -39,50 +45,81 @@ import Profile_pic from "../Images/About_picture.jpg"
             Construction and remodel ideas <br>
             Exterior design <br>
         </p>
-    </article>
 </section>
 
 
 <style>
     .personal-bio {
-        display: flex;
-        flex-direction: row;
-        justify-content: baseline;
-
-    }
-    .personal-bio img{
-        width: 30%;
-        padding: 20px;
-        margin: 20px;
-
-    }
-
-    .personal-bio article {
+        border: dotted purple;
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
+
+    }
+
+    .about-design {
+        border: dotted greenyellow;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 40px;
+        margin-left: 20px;
+
+    }
+
+    .personal-bio h2 {
+        font-size: 2rem;
+    }
+
+    .personal-bio p {
+        font-style: italic;
+    }
+
+    .title-at{
+        border: dotted greenyellow;
+        margin-bottom: 20px;
+        margin-left: 20px;
+    }
+    .about-at {
+        border: dotted greenyellow;
+        display: flex;
+        flex-direction: row;
         justify-content: center;
-
-        width: 50%;
-        padding: 20px;
-        margin: 20px;
+        align-items: center;
 
     }
 
-    article div {
-        width: 100%;
-        padding: 20px;
-        margin: 20px;
+    .profile-picture {
+        margin-left: 20px;
     }
+
+    .profile-description {
+        margin-left: 60px;
+        padding:20px;
+    }
+
 
     .services {
+        border: dotted greenyellow;
         background-color: #efddcf;
-        text-align: center;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+
+        margin-top: 20px;
+        padding:20px;
     }
 
-    .services article {
-        padding: 40px;
-        
-    }
+
+    @media only screen and (max-width: 1024px) {
+        .about-at {
+            flex-direction: column;
+        }
+
+        }
 
 
 </style>
