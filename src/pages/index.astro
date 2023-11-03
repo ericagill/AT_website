@@ -2,34 +2,13 @@
 import Layout from "../layouts/Layout.astro";
 import Project_sample1 from "../Images/Project_sample1.png"
 import Project_sample2 from "../Images/Project_sample2.png"
+import NewNavbar from "../components/NewNavbar.astro";
 
 
 ---
 <Layout>
+    <NewNavbar/>
     <header>
-        <nav class = "topnav">
-            <p class ="brand-name">AT <br> 
-            Interior <br>
-            Design <br>
-            </p>
-            <a href = "#" class = "toggle-button">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </a>
-            <ul class = "navbar-links">
-                <li class = "dropdown">
-                    <a href="#">Projects</a>
-                    <div class="dropdown-content">
-                        <a href="/AT_website/resProjects">Residential</a>
-                        <br>
-                        <a href="/AT_website/hosProjects">Hospitality</a>
-                    </div>
-                </li>
-                <li><a href="/AT_website/about">About</a></li>
-                <li><a href="/AT_website/contact">Contact</a></li>
-            </ul>
-        </nav>
     </header>
     <main>
         <section class="description">

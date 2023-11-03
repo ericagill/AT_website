@@ -1,0 +1,182 @@
+<header>
+    <nav class = "topnav">
+        <p class="logo">AT Interior Design</p>
+        
+        <a href = "#" class = "toggle-button" onclick="openNav()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+
+        <ul class = "navbar-links">
+            <li><a href="/AT_website">HOME</a></li>
+            <li><a href="/AT_website/resProjects">RESIDENTIAL</a></li>
+            <li><a href="/AT_website/hosProjects">HOSPITALITY</a></li>
+            <li><a href="/AT_website/about">ABOUT</a></li>
+            <li><a href="/AT_website/contact">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <!-- fullscreen overlay nav menu left to right -->
+    <div id="main-nav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn">&times;</a>
+        <div class="overlay-content">
+            <a href="/AT_website">HOME</a>
+            <a href="/AT_website/resProjects">RESIDENTIAL</a>
+            <a href="/AT_website/hosProjects">HOSPITALITY</a>
+            <a href="/AT_website/about">ABOUT</a>
+            <a href="/AT_website/contact">CONTACT</a>
+        </div>
+    <div>
+</header>
+
+<script>
+function openNav() {
+  document.getElementById("main-nav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("main-nav").style.width = "0%";
+}
+
+const toggleButton = document.getElementsByClassName("toggle-button")[0];
+const crossButton = document.getElementsByClassName("closebtn")[0];
+
+toggleButton.addEventListener("click", openNav);
+crossButton.addEventListener("click", closeNav);
+
+</script>
+<style>
+
+header {
+    position: relative;
+    overflow: hidden;
+}
+
+.topnav {
+    margin: 20px;
+    width: auto;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    color: #333;
+    font-size: 3rem;
+    margin-right: 60px
+}
+
+.navbar-links {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-items: baseline;
+}
+
+.topnav li a {
+    color: #333;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+  
+.topnav li a:hover , :focus {
+    color: black;
+    text-decoration: underline;
+}
+
+/* hamburger menu style */
+
+.toggle-button {
+        position:absolute;
+        top: .7rem;
+        right: 1rem;
+
+        display:none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+    }
+
+    .toggle-button .bar {
+        height: 3px;
+        width:100%;
+        background-color: #333;
+        border-radius: 10px;
+    }
+
+    /* overlay full screen side navbar */
+
+    .overlay {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0, 0.9);
+        overflow-x: hidden;
+        transition: 0.5s;
+    }
+
+        .overlay-content {
+        position: relative;
+        top: 25%;
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+        }
+
+        .overlay a {
+        padding: 8px;
+        text-decoration: none;
+        font-size: 36px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+        }
+
+        .overlay a:hover, .overlay a:focus {
+        color: #f1f1f1;
+        }
+
+        .overlay .closebtn {
+        position: absolute;
+        top: 20px;
+        right: 45px;
+        font-size: 60px;
+        }
+
+        @media screen and (max-height: 450px) {
+        .overlay a {font-size: 20px}
+        .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+        }
+        }
+/* media queries */
+    
+    @media (max-width: 960px) {
+        .toggle-button {
+            display: flex;
+        }
+
+        .navbar-links {
+            display: none; 
+        }
+
+    }
+
+/* responsive side bar menu  */
+
+
+</style>

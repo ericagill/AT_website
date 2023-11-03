@@ -1,7 +1,7 @@
 ---
 //layout imports
 import Layout from "../../layouts/Layout.astro";
-import Navbar from "../../components/Navbar.astro";
+import NewNavbar from "../../components/NewNavbar.astro";
 
 
 
@@ -64,12 +64,13 @@ const {description } = Astro.props;
 ---
 
 <Layout>
-    <Navbar />
+    <NewNavbar />
 
     <section>
         <h2 class = "title">{title}</h2>
         <p class = "description"> {description} </p>
     </section>
+
 <style>
 
 </style>
