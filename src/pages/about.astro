@@ -1,35 +1,36 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import NewNavbar from "../components/NewNavbar.astro";
-import Profile_pic from "../Images/About_picture.jpg"
+import Profile_pic from "../Images/About_picture.jpg";
+import Random2 from "../Images/Random 2.jpg"
 ---
 
 <Layout>
 <NewNavbar />
 
 <section class="personal-bio">
+
     <div class="about-design">
-        <h2 >ABOUT AT INTERIOR DESIGN</h2>
-        <p>Hello and welcome to Alessia Trevisan design<br>
-            briefly describe: <br>
-            your style <br>
-            your design concept <br>
-            anything more about your design style
-        </p>
+        <div class = "design-picture">
+            <img src = {Random2.src} alt="profile picture">
+        </div>
+        <div class = "design-description">
+            <h2 >ABOUT AT INTERIOR DESIGN</h2>
+            <p>Hello and welcome to Alessia Trevisan design - a destination for those in search of understated minimal style, everyday luxury and enduring modern design. Exploring contemporary interiors, architecture, design and lifestyle products, AT Design offers a stylish view of beautiful spaces and places through a carefully created edit of news, finds and inspiration.
+            </p>
+        </div>
     </div>
-    <div class="title-at">
-        <h2>ABOUT ALESSIA TREVISAN</h2>
-    </div>
+
     
     <div class = "about-at">
         <div class = "profile-picture">
             <img src = {Profile_pic.src} alt="profile picture" width="400px" height = "400px">
         </div>
         <div class ="profile-description">
-            <p>briefly describe: <br>
-                who you are <br>
-                your experience <br>
-                your uniqueness and lifestyle </p>
+            <h2>ABOUT ALESSIA TREVISAN</h2>
+            <p>An interiors designer, photographer, traveller. Alessia works on social media and content creation projects from her home in London. 
+
+            AT Interior Design reflects Alessia's love of objects that are simple and honest in their design and use of materials, and her belief that the things we choose to live with should help create a home that is inviting, restful and a place of sanctuary. </p>
         </div>
     </div>
     
@@ -52,16 +53,7 @@ import Profile_pic from "../Images/About_picture.jpg"
     .personal-bio {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-
-    }
-
-    .about-design {
-        display: flex;
-        flex-direction: column;
         align-items: center;
-        margin-bottom: 40px;
-        margin-left: 20px;
 
     }
 
@@ -73,15 +65,35 @@ import Profile_pic from "../Images/About_picture.jpg"
         font-style: italic;
     }
 
-    .title-at{
-        margin-bottom: 20px;
-        margin-left: 20px;
+    .about-design {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 20px 10%;
     }
+
+    .design-picture {
+        max-width: 100%;
+        height: auto;
+        overflow: hidden;
+
+    }
+
+    .design-description{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       
+    }
+
     .about-at {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
+
+        margin: 20px 10%;
 
     }
 
@@ -90,7 +102,10 @@ import Profile_pic from "../Images/About_picture.jpg"
     }
 
     .profile-description {
-        margin-left: 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
         padding:20px;
     }
 
@@ -111,7 +126,9 @@ import Profile_pic from "../Images/About_picture.jpg"
     @media only screen and (max-width: 1024px) {
         .about-at {
             flex-direction: column;
+            align-items: center;
         }
+
 
         }
 
