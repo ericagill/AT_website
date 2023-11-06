@@ -1,0 +1,142 @@
+---
+const {title,  img1, img2, description} = Astro.props
+---
+
+<section class = "main">
+    <div class="slideshow-container" >
+        <div class= "slide fade">
+            <img src= {img1} alt="Project interior">
+        </div>
+        <div class= "slide">
+            <img src= {img2} alt="Project interior">
+        </div>
+        <div class= "slide">
+            <img src= {img1} alt="Project interior">
+        </div>
+    
+        <button class="prev" >&#10094;</button>
+        <button class="next" >&#10095;</button>
+    </div>
+
+    <div class ="description-section">
+        <h2 class = "title">{title}</h2>
+        <p class = "description"> {description} </p>
+    </div>
+</section>
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("slide");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+slides[slideIndex-1].style.display = "block";
+}
+
+let prevButton = document.getElementsByClassName("prev")[0];
+let nextButton = document.getElementsByClassName("next")[0];
+
+prevButton.addEventListener("click", () =>{
+    console.log(prevButton)
+    showSlides(slideIndex += -1)
+});
+nextButton.addEventListener("click", () =>{
+    console.log("next")
+    showSlides(slideIndex += 1)
+});
+</script>
+
+<style>
+
+.main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+
+.description-section {
+    margin: 20px 40px;
+
+
+}
+
+/*slideshow */
+
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin:20px 40px;
+
+}
+
+.slide {
+    display: none;
+
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.prev, .next {
+    cursor: pointer;
+
+    position: absolute;
+    top: 50%;
+    width: auto;
+
+    background: none;
+    border: none;
+    font-size: 4rem;
+    transform: translateY(-50%);
+    color: rgba(255,255,255, 0.5);
+    
+    border-radius: 0.25rem;
+    padding: 0 0.5rem; 
+    background-color: rgba(0, 0, 0, 0.1)
+}
+
+.next:hover,
+.next:focus, 
+.prev:hover, 
+.prev:focus {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.prev {
+    left: 1rem;
+}
+
+.next {
+    right: 1rem;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+/* Media queries */
+    @media only screen and (max-width: 975px) {
+        .main {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+    }
+</style>

@@ -15,7 +15,7 @@ const residential = [
         title: "Lambeth Victorian House",
         img1: "", 
         img2:"",
-        description:"A big house in Lambeth borough, compose by three floors is one of my project in London. The kitchen based on the lower ground floor, next to the garden, needs to be updated. I worked on several different configurations to find the perfect one to reach the client’s expectations, needs and future plans. The environment will be expanded over the next two years. The final configuration is the best option in order to add eventually in the future walls and based units, keeping the same design. All the base units are hanging on the wall except for the island that is on glass legs. The configuration of all the existing appliances has changed, finishes, tiles and flooring too. The refurbishment has been completed..",
+        description:"A big house in Lambeth borough, compose by three floors is one of my project in London. The kitchen based on the lower ground floor, next to the garden, needs to be updated. I worked on several different configurations to find the perfect one to reach the client’s expectations, needs and future plans. The environment will be expanded over the next two years. The final configuration is the best option in order to add eventually in the future walls and based units, keeping the same design. All the base units are hanging on the wall except for the island that is on glass legs. The configuration of all the existing appliances has changed, finishes, tiles and flooring too. The refurbishment has been completed.",
     },
     {
         title: "Clerkenwell Penthouse",
