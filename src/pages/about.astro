@@ -23,9 +23,8 @@ import Random2 from "../Images/Random 2.jpg"
 
     
     <div class = "about-at">
-        <div class = "profile-picture">
-            <img src = {Profile_pic.src} alt="profile picture" width="400px" height = "400px">
-        </div>
+        <img src = {Profile_pic.src} alt="profile picture" width="400px" height = "400px">
+        
         <div class ="profile-description">
             <h2>ABOUT ALESSIA TREVISAN</h2>
             <p >An interiors designer, photographer, traveller. Alessia works on social media and content creation projects from her home in London. 
@@ -114,6 +113,12 @@ import Random2 from "../Images/Random 2.jpg"
         padding: 5%;
     }
 
+    .about-at img {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        object-fit: cover;
+    }
 
     .services {
         background-color: #efddcf;
