@@ -1,9 +1,75 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import NewNavbar from "../components/NewNavbar.astro";
+
+//images imports 
+import London_pic from "../Images/cities/London-picture.jpg";
+import Milan_pic from "../Images/cities/Milan-picture.jpg";
 ---
 
 <Layout>
     <NewNavbar />
-    <h1>Contact</h1>
+    <main class="contact">
+        <h1>GET IN CONTACT</h1>
+        <p class="intro">If your project (residential or commercial) feels like it could be a good fit, please get in touch using the contact details below.</p>
+        <div class="info"></div>
+            <h3>GENERAL ENQUIRIES</h3>
+            <p class="details">email: address@domain.com</p>
+        </div>
+        <section class="london">
+            <p>We cover London city </p>
+            <img src={London_pic.src} alt="London from above" width = "200px" height = "200px">
+        </section>
+
+        <section class="milan">
+            <p>We cover Milano citta'</p>
+            <img src={Milan_pic.src} alt="Milan from above" width = "200px" height = "200px">
+        </section>
+    </main>
+
+<style>
+.contact{
+    margin: 5%
+}
+
+.contact h1 {
+    font-size: 2rem;
+    padding-bottom: 1%;
+}
+
+.intro {
+    padding: 3% 0;
+}
+
+h3{
+    /* border: dotted purple; */
+    padding: 1% 0;
+}
+
+.london,
+.milan {
+    /* border: dotted purple; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 5%
+
+}
+
+.london img, 
+.milan img {
+     width:50%;
+     max-width: 100%;
+     /* margin-left: auto; */
+
+     object-fit: cover;
+     overflow: hidden;
+
+}
+
+
+
+</style>
 </Layout>

@@ -18,11 +18,11 @@ import Pizza_place from "../Images/slideshow/Pizza_ground _floor.JPG";
     <header>
         <section class = "main">
             <div class="slideshow-container" >
-                <div class= "slide fade">
-                    <img src= {Coffe_shop1.src} alt="Project interior" >
-                </div>
                 <div class= "slide">
                     <img src= {Opening_project.src} alt="Project interior" >
+                </div>
+                <div class= "slide fade">
+                    <img src= {Coffe_shop1.src} alt="Project interior" >
                 </div>
                 <div class= "slide">
                     <img src={Coffe_shop2.src} alt="Project interior">
@@ -113,11 +113,8 @@ import Pizza_place from "../Images/slideshow/Pizza_ground _floor.JPG";
 /*slideshow */
 
 .slideshow-container {
-   
-
     width: 100%;
     height: 100vh;
-    margin: 0 10%;
 
     position: relative;
 }
@@ -133,7 +130,8 @@ import Pizza_place from "../Images/slideshow/Pizza_ground _floor.JPG";
     width: 100%;
     height: 100%;
 
-    /* object-fit: contain; */
+    overflow: hidden;
+    object-fit: cover;
 }
 
 
